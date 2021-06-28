@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>JavaScriptのTODOアプリ</title>
+</head>
+<body>
+  <input id="add-todo" type="text" value="todoを追加">
+  <button id="js-button">ボタン</button>
+
+  <ul class="todo__list" id="js-todo__list">
+    <li class="todo__item" id="js-todo__item">タスク1<button>削除</button></li>
+  </ul>
+</body>
+</html>
+<script>
+  const button = document.getElementById("js-button");
+  button.addEventListener("click", (e) => {
+    const newTodo = document.createElement("li");
+    newTodo.innerText = "aaa";
+    const newTodoList = document.getElementById("js-todo__list")
+    newTodoList.appendChild(newTodo);
+    });
+</script>
