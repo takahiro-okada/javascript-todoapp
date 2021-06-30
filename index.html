@@ -1,26 +1,55 @@
 <!DOCTYPE html>
 <html lang="ja">
+
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css" rel="stylesheet">
   <title>JavaScriptのTODOアプリ</title>
 </head>
-<body>
-  <input id="add-todo" type="text" value="todoを追加">
-  <button id="js-button">ボタン</button>
 
-  <ul class="todo__list" id="js-todo__list">
-    <li class="todo__item" id="js-todo__item">タスク1<button>削除</button></li>
-  </ul>
+<body class="bg-green-200">
+  <header class="bg-green-400">
+    <div class="px-8 py-6 font-bold text-xl">TODOアプリ</div>
+  </header>
+  <div class="container mx-auto px-4 py-4">
+    <input id="add-todo" type="text" placeholder="todoを追加" class="py-1 px-4">
+    <button id="js-button" class="bg-indigo-700 font-semibold text-white py-1 px-4 rounded">ボタン</button>
+    <div class="flex py-12">
+      <div class="flex-1 bg-indigo-100 px-2 py-2 mx-2">
+        <h2 class="text-lg font-bold">やること</h2>
+        <ul class="todo__list" id="js-todo__list">
+          <li class="todo">アイテム</li>
+        </ul>
+      </div>
+      <div class="flex-1 bg-pink-200 px-2 py-2 mx-2">
+        <h2 class="text-lg font-bold">完了</h2>
+        <ul class="todo__list" id="js-todo__list">
+          <li class="todo">アイテム</li>
+        </ul>
+      </div>
+    </div>
+  </div>
 </body>
+
 </html>
 <script>
   const button = document.getElementById("js-button");
+  // Todoの追加
   button.addEventListener("click", (e) => {
-    const newTodo = document.createElement("li");
-    newTodo.innerText = "aaa";
-    const newTodoList = document.getElementById("js-todo__list")
-    newTodoList.appendChild(newTodo);
-    });
+    const li = document.createElement("li");
+    const removeButton = document.createElement("button");
+    const competeButton = document.createElement("button");
+
+    const input = document.getElementById("add-todo");
+    const text = input.value;
+
+    li.className = "todo__item";
+    li.innerText = text;
+
+
+    const ul = document.getElementById("js-todo__list")
+    ul.appendChild(li);
+  });
 </script>
