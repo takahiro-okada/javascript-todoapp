@@ -1,0 +1,13 @@
+.todo__item{
+  padding:10px 2px
+}
+#incomplete-list .todo__incomplete{
+  background-color: beige;
+  padding:5px 10px;
+  margin-left:5px;
+}
+#complete-list .todo__delete{
+  background-color: beige;
+  padding:5px 10px;
+  margin-left:5px;
+}
