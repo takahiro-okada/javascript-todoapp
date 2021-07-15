@@ -11,6 +11,7 @@ addButton.addEventListener("click", (e) => {
     const li = document.createElement("li");
     li.className = "todo__item";
     li.innerText = text;
+    input.value='';
 
     // 完了ボタン
     const competeButton = document.createElement("button");
@@ -27,9 +28,6 @@ addButton.addEventListener("click", (e) => {
     let newTodo = ul.appendChild(li);
     let comp = li.appendChild(competeButton);
     let compButton = li.appendChild(comp)
-    localStorage.setItem("mylist", JSON.stringify(compButton));
-
-    let saved = localStorage.getItem("mylist");
 
     compButton.addEventListener("click",(e)=> {
       const ul = document.getElementById("complete-list");
@@ -39,9 +37,18 @@ addButton.addEventListener("click", (e) => {
     })
 
     deleteButton.addEventListener("click",(e)=>{
-      localStorage.clear();
       newTodo.remove();
     })
+
+    todoArr = [];
+    var storageKey = "todoArr";
+    var saveTodo = function(text){
+      const todoArr = {
+        todo : text
+      };
+      todoArr.push(saveTodo);
+      saveStorage(storageKey,todoArr);
+    }
   } else {
     alert("ToDoを追加してください")
   }
