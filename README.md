@@ -8,7 +8,7 @@ Learning JavaScript to make TODO App.
 
 ## Technologies
 html  
-css 
+css  
 JavaScript
 
 ## Setup
